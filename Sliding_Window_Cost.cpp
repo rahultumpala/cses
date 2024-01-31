@@ -14,6 +14,8 @@ typedef pair<int, int> pii;
 /*
 Find the median: using heap
 iterate through all elements in window and sum the diff btwn element & median - gives TLE? YES
+store sum of left and right groups
+int cost = (median * left.size()) - sumLeft + sumRight - (median * right.size());
 */
 
 int32_t main() {
