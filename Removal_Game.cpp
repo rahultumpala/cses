@@ -2,6 +2,10 @@
 
 using namespace std;
 /*
+Copied from Codeforces
+I just cant solve it rn - will revisit later
+I need time to internalize this concept
+
 The trick here is to see that since the sum of the two players' scores is the sum of the input list, player 1 tries to maximize score1−score2
 , while player 2 tries to minimize it.
 
