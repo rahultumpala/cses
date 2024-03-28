@@ -15,25 +15,24 @@ if(i <= s) dp[i][s] = dp[i-1][s]   +  dp[i-1][s-i]
 
 */
 int32_t main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
     int n;
     cin >> n;
     int sum = (n * (n + 1)) / 2;
     if(sum % 2 != 0){
         cout << 0 << endl;
-    }
-    sum /= 2;
-    int mod = 1e9 + 7;
-    vector<vector<int>> dp(n + 1, vector<int>(sum + 1, 0));
-    dp[0][0] = 1;
-    forn(i, 1, n + 1) {
-        forn(s, 1, sum + 1) {
-            dp[i][s] = dp[i-1][s];
-            if (i <= s) {
-                dp[i][s] = (dp[i][s] + dp[i - 1][s - i]) % mod;
+    }else {
+        sum /= 2;
+        int mod = 1e9 + 7;
+        vector<vector<int>> dp(n + 1, vector<int>(sum + 1, 0));
+        dp[0][0] = 1;
+        forn(i, 1, n + 1) {
+            forn(s, 1, sum + 1) {
+                dp[i][s] = dp[i-1][s];
+                if (i <= s) {
+                    dp[i][s] = (dp[i][s] + dp[i - 1][s - i]) % mod;
+                }
             }
         }
+        cout << dp[n][sum] << endl;
     }
-    cout << dp[n][sum] << endl;
 }
