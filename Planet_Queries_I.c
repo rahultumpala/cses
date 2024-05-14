@@ -8,8 +8,6 @@ modified to C code because same code in C++ was timing out.
 #include<stdio.h>
 #include<math.h>
 
-using namespace std;
-
 const int MAX_CHILDREN = 31;
 int children[200002][MAX_CHILDREN];
 
@@ -41,4 +39,6 @@ int main() {
 		}
 		printf("%d\n", cur);
 	}
+
+	return 0;
 }
